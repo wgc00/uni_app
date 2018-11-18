@@ -1,0 +1,22 @@
+<template name="8e54ccee">
+  <view class="_view data-v-35af6ce1 content">
+    <view class="_view data-v-35af6ce1 uni-list">
+      <swiper class="_swiper data-v-35af6ce1 banner-image" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{1000}}">
+        <swiper-item wx:key="item.id" key="{{item.id}}" class="_swiper-item data-v-35af6ce1 code-image" wx:for="{{loops}}" wx:for-index="index" wx:for-item="item">
+          <image src="{{item.image}}" mode="scaleToFill" class="_image data-v-35af6ce1"></image>
+        </swiper-item>
+      </swiper>
+      <view class="_view data-v-35af6ce1 uni-media-list-text-bottom uni-ellipsis">今日头条</view>
+      <view class="_view data-v-35af6ce1"></view>
+      <view class="_view data-v-35af6ce1 uni-list-cell" hover-class="uni-list-cell-hover" wx:key="index" key="{{index}}" bindtap="handleProxy" data-id="{{item.id}}" data-eventid="{{'ohH-0-'+index}}" data-comkey="{{$k}}" wx:for="{{news}}" wx:for-index="index"
+        wx:for-item="item">
+        <view class="_view data-v-35af6ce1 uni-media-list">
+          <image class="_image data-v-35af6ce1 uni-media-list-logo" mode="right" src="{{item.images}}"></image>
+          <view class="_view data-v-35af6ce1 uni-media-list-body">
+            <view class="_view data-v-35af6ce1 uni-media-list-text-top">{{item.title}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
