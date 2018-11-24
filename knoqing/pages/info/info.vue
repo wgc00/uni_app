@@ -28,8 +28,13 @@
 				data: {},
 				success: res => {
 					this.strings = res.data.body;
+					console.log(this.strings);
+					this.strings = this.strings.replace("“", '"');
+					this.strings = this.strings.replace("”", '"');
 					this.conten_url = res.data.share_url;
 					//console.log(res);
+					
+					
 					uni.hideLoading();
 				},
 				fail: () => {},
