@@ -1,15 +1,15 @@
 <template>
 	<view class="content">
 		<view class="uni-list">
-			<swiper class="banner-image" :indicator-dots="true" :autoplay="true" :interval="2000" :duration="1000">
-				<swiper-item  v-for="item in loops" :key="item.id" class="code-image" @tap="openinfo">
-					<image  :src="item.image" mode="scaleToFill" ></image>
-				</swiper-item>
-				
-			</swiper>
-			
+			<view class="part2">
+				<swiper class="banner-box" indicator-dots autoplay indicator-active-color="#169bd5" circular :interval="5000"
+				 :duration="300" indicator-color="rgba(0,0,0,.3)">
+					<swiper-item v-for="(item, index) in loops" :key="index">
+						<image class="banner-image" :src="item.image" mode="aspectFill" lazy-load @tap="openinfo" :data-id="item.id"></image>
+					</swiper-item>
+				</swiper>
+			</view>
 			<view class="uni-media-list-text-bottom uni-ellipsis">今日头条</view>
-			<view></view>
 			<view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item,index) in news" :key="index" @tap="openinfo"
 			 :data-id="item.id">
 				<view class="uni-media-list">
@@ -71,15 +71,44 @@
 			}
 		}
 	}
-	
 </script>
 
 <style>
+	@import '../../common/uni.css';
+
 	.uni-media-list-body {
 		height: auto;
 	}
 
 	.uni-media-list-text-top {
 		line-height: 1.6em;
+	}
+	.part2 {
+		width: 100%;
+		height: 360px;
+		border-bottom: 20px solid #f9f9f9;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.part2:after {
+		content: " ";
+		height: 20px;
+		border-radius: 50%;
+		background: #f9f9f9;
+		position: absolute;
+		bottom: -10px;
+		left: -20px;
+		right: -20px;
+	}
+
+	.banner-box {
+		width: 100%;
+		height: 100%;
+	}
+
+	.banner-image {
+		width: 100%;
+		height: 100%;
 	}
 </style>

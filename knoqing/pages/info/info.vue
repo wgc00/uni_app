@@ -28,7 +28,7 @@
 				data: {},
 				success: res => {
 					this.strings = res.data.body;
-					console.log(this.strings);
+					/* console.log(this.strings); */
 					this.strings = this.strings.replace(/“/g, '"');
 					this.strings = this.strings.replace(/”/g, '"');
 					this.conten_url = res.data.share_url;
